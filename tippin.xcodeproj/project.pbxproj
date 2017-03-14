@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					994E91401E67E83C00AB1EEC = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = T8EV243LZA;
 						ProvisioningStyle = Automatic;
 					};
 					994E91541E67E83C00AB1EEC = {
@@ -414,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T8EV243LZA;
 				INFOPLIST_FILE = tippin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sbrsh.tippin;
@@ -426,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T8EV243LZA;
 				INFOPLIST_FILE = tippin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sbrsh.tippin;

@@ -15,6 +15,9 @@ class SettingsTableViewController: UITableViewController  {
     let step: Float = 1
     let dfltTip = [10, 15, 18, 20]
     var globalTip = 0
+    let preferences = UserDefaults.standard
+    @IBOutlet weak var tipSlider: UISlider!
+    @IBOutlet weak var splitSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,19 @@ class SettingsTableViewController: UITableViewController  {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(_ animated: Bool){
+        if let y = preferences.object(forKey: "defaultTip") as? Int {
+            defaultTipLabel.text = String(dfltTip[y])
+            globalTip = y
+            tipSlider.value = Float(y)
+        }
+        if let x = preferences.object(forKey: "defaultSplit") as? String {
+            splitByLabel.text = x
+            splitSlider.value = Float(x)!
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,7 +72,6 @@ class SettingsTableViewController: UITableViewController  {
         
         //Change color of button on save
         sender.backgroundColor = UIColor.green
-        let preferences = UserDefaults.standard
         //let tipIndex = dfltTip.index(of: Int(defaultTipLabel.text!)!) ?? 0
         preferences.setValue(globalTip, forKey: "defaultTip")
         preferences.setValue(splitByLabel.text, forKey: "defaultSplit")

@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitAmountLabel: UILabel!
     var tipPercentage:Double = 0
     let preferences = UserDefaults.standard
+    @IBOutlet weak var stepper: UIStepper!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +34,14 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if let y = preferences.object(forKey: "defaultTip") as? Int {
-            //print("The default tip is:" + String(y))
             tipControl.selectedSegmentIndex = y
         }
         if let x = preferences.object(forKey: "defaultSplit") as? String {
-            //print("The default Split is:" + x)
+            stepper.value = Double(x)!
+            print(stepper.value)
             splitLabel.text = x
         }
-        
+        realCalculateTip()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,26 +54,32 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
-    
-    @IBAction func calculateTip(_ sender: AnyObject) {
+    func realCalculateTip(){
         let tipPercentages = [0.10, 0.15, 0.18, 0.20]
         //Change the bill value to number else set default to 0
         let bill = Double(billValue.text!) ?? 0
         tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         let tip = bill * tipPercentage
         let total = bill + tip
+        
         let splitValue = Double(splitLabel.text!) ?? 0
+        print("Current Split Value is" + String(splitValue))
         let splitAmount = total / splitValue
         
-    
+        
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
         splitAmountLabel.text = String(format: "$%.2f", splitAmount)
     }
     
+    @IBAction func calculateTip(_ sender: AnyObject) {
+        realCalculateTip()
+    }
+    
     
     @IBAction func incrementSplit(_ sender: UIStepper) {
         splitLabel.text = "\(Int(sender.value))"
+        realCalculateTip()
     }
 }
 
