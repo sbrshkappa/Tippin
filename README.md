@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/a/TmpPz' title='Tippin Walkthrough' width='' alt='Tippin Walkthrough Video Application' />
+![alt tag] (https://raw.githubusercontent.com/sbrshkappa/Tippin/master/tippin.gif)
 
 GIF created with [LiceCap](http://www.ezgif.com).
 
