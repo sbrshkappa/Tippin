@@ -1,5 +1,58 @@
-# Tippin
-An iOS Application that calculates Tips for a restaurant bill. This application will quickly calculate your tip amount 
-and also figure out how much your share is based on the number of people you are dining with.
+# Pre-work - Tippin
 
-![alt tag](https://raw.githubusercontent.com/sbrshkappa/Tippin/master/tippin.gif)
+Tippin is a tip calculator application for iOS.
+
+Submitted by: Sabareesh Kappagantu
+
+Time spent: 9 hours spent in total
+
+## User Stories
+
+The following *required* functionality is complete:
+
+ * User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+ * Settings page to change the default tip percentage.
+
+The following **optional** features are implemented:
+* Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+
+
+The following **additional** features are implemented:
+
+* Allowing the user to set default split amount
+* Splitting the Tip Amount based on number of people sharing
+* Created an icon for the app
+* Created a storyboard page
+
+## Video Walkthrough 
+
+Here's a walkthrough of implemented user stories:
+
+<img src='https://imgur.com/a/TmpPz' title='Tippin Walkthrough' width='' alt='Tippin Walkthrough Video Application' />
+
+GIF created with [LiceCap](http://www.ezgif.com).
+
+## Notes
+
+Some of the challenges I faced building the app,
+
+1. Making sure that the default values were persistent for tip and split values.
+2. Making sure the sliders were set to the default values when the screen was opened.
+3. Creating a StoryBoard Page.
+
+
+## License
+
+    Copyright 2017 Sabareesh Kappagantu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
