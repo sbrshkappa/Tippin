@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var splitLabel: UILabel!
     @IBOutlet weak var splitAmountLabel: UILabel!
+    var tipPercentage:Double = 0
+    let preferences = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,19 @@ class ViewController: UIViewController {
         //Setting the cursor to show up by default in the Bill Value Field
         billValue.becomeFirstResponder()
         billValue.placeholder = "0.00"
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let y = preferences.object(forKey: "defaultTip") as? Int {
+            //print("The default tip is:" + String(y))
+            tipControl.selectedSegmentIndex = y
+        }
+        if let x = preferences.object(forKey: "defaultSplit") as? String {
+            //print("The default Split is:" + x)
+            splitLabel.text = x
+        }
         
     }
 
@@ -39,17 +54,16 @@ class ViewController: UIViewController {
     
     
     @IBAction func calculateTip(_ sender: AnyObject) {
-        
         let tipPercentages = [0.10, 0.15, 0.18, 0.20]
-        
         //Change the bill value to number else set default to 0
         let bill = Double(billValue.text!) ?? 0
-        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
+        tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        let tip = bill * tipPercentage
         let total = bill + tip
         let splitValue = Double(splitLabel.text!) ?? 0
         let splitAmount = total / splitValue
         
-        
+    
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
         splitAmountLabel.text = String(format: "$%.2f", splitAmount)
