@@ -30,7 +30,7 @@ Here's a walkthrough of implemented user stories:
 
 ![alt tag] (https://raw.githubusercontent.com/sbrshkappa/Tippin/master/tippin.gif)
 
-GIF created with [LiceCap](http://www.ezgif.com).
+GIF created with [EzGif](http://www.ezgif.com).
 
 ## Notes
 
