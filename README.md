@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![alt tag] (https://raw.githubusercontent.com/sbrshkappa/Tippin/master/tippin.gif)
+![alt tag] (https://github.com/sbrshkappa/Tippin/blob/master/tippin.gif)
 
 GIF created with [EzGif](http://www.ezgif.com).
 
